@@ -2,7 +2,7 @@
  * @Copyright (c) 2019, Denali System Co., Ltd. All Rights Reserved.
  * Website: www.denalisystem.com | Email: marketing@denalisystem.com
  */
-package com.hsheng.core.design;
+package com.hsheng.core.design.singleton;
 
 /**
  * @description 静态内部类实现模式（线程安全，调用效率高，可以延时加载）

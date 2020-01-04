@@ -1,4 +1,4 @@
-package com.hsheng.core.design;
+package com.hsheng.core.design.singleton;
 
 /**
  * @description volatile+双重锁判断机制

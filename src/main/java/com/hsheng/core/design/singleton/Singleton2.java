@@ -1,4 +1,4 @@
-package com.hsheng.core.design;
+package com.hsheng.core.design.singleton;
 
 /**
  * @description 懒汉式(线程安全，调用效率不高，但是能延时加载

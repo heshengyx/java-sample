@@ -2,7 +2,7 @@
  * @Copyright (c) 2019, Denali System Co., Ltd. All Rights Reserved.
  * Website: www.denalisystem.com | Email: marketing@denalisystem.com
  */
-package com.hsheng.core.design;
+package com.hsheng.core.design.singleton;
 
 /**
  * @description 枚举类（线程安全，调用效率高，不能延时加载，可以天然的防止反射和反序列化调用）

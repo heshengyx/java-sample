@@ -1,4 +1,4 @@
-package com.hsheng.core.design;
+package com.hsheng.core.design.singleton;
 
 /**
  * @description 饿汉式(线程安全，调用效率高，但是不能延时加载)
