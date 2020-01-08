@@ -44,9 +44,9 @@ public AnnotationConfigApplicationContext(Class<?>... annotatedClasses) {
         }
         System.out.println("----------------------------------");
 
-        Blue blue = context.getBean(Blue.class);
+        ColorBlue blue = context.getBean(ColorBlue.class);
         blue.print();
-        Yellow yellow = context.getBean(Yellow.class);
+        ColorYellow yellow = context.getBean(ColorYellow.class);
         yellow.print();
 
         System.out.println("----------------------------------");

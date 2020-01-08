@@ -22,13 +22,13 @@ public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegi
      */
     @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
-        boolean definition1 = registry.containsBeanDefinition(Red.class.getName());
-        boolean definition2 = registry.containsBeanDefinition(Black.class.getName());
+        boolean definition1 = registry.containsBeanDefinition(ColorRed.class.getName());
+        boolean definition2 = registry.containsBeanDefinition(ColorBlack.class.getName());
         if (definition1 && definition2) {
             // 指定Bean定义信息；（Bean的类型，Bean。。。）
-            RootBeanDefinition beanDefinition = new RootBeanDefinition(Yellow.class);
+            RootBeanDefinition beanDefinition = new RootBeanDefinition(ColorYellow.class);
             // 注册一个Bean，指定bean名
-            registry.registerBeanDefinition(Yellow.class.getName(), beanDefinition);
+            registry.registerBeanDefinition(ColorYellow.class.getName(), beanDefinition);
         }
 
         AbstractBeanDefinition beanDefinition = BeanDefinitionBuilder.genericBeanDefinition(MyMapper.class).getBeanDefinition();

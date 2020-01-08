@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Import;
  */
 @Configuration
 @ComponentScan
-@Import({Blue.class, Red.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
+@Import({ColorBlue.class, ColorRed.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class, MyMapperAutoConfigureRegistrar.class})
 public class AppConfig {
 
     @Bean(initMethod = "initMethod", destroyMethod = "destroyMethod")

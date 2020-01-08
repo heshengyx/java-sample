@@ -13,6 +13,6 @@ public class MyImportSelector implements ImportSelector {
 
     @Override
     public String[] selectImports(AnnotationMetadata annotationMetadata) {
-        return new String[] {Black.class.getName(), White.class.getName()};
+        return new String[] {ColorBlack.class.getName(), ColorWhite.class.getName()};
     }
 }

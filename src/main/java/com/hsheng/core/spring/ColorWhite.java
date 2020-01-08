@@ -6,9 +6,9 @@ package com.hsheng.core.spring;
  * @date 2020/1/8 10:19
  * @since TODO
  */
-public class White {
+public class ColorWhite {
 
     public void print() {
-        System.out.println("===White===");
+        System.out.println("===ColorWhite===");
     }
 }
