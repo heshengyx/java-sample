@@ -8,12 +8,22 @@ package com.hsheng.core.design.callback;
  */
 public class Programmer {
 
+    /**
+     * 声明回调对象
+     */
     private Notice notice;
 
+    /**
+     * 定义回调接口
+     */
     interface Notice {
         void noticeMe(String msg);
     }
 
+    /**
+     * 设置回调对象
+     * @param notice
+     */
     public void setNotice(Notice notice) {
         this.notice = notice;
     }

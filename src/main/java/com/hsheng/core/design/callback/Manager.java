@@ -24,6 +24,7 @@ public class Manager {
      */
     public void arrange(String task) {
         Programmer programmer = new Programmer();
+        //设置回调
         programmer.setNotice(new Programmer.Notice() {
 
             @Override
@@ -32,15 +33,9 @@ public class Manager {
             }
         });
         programmer.receiveTask(task);
-        //new Programmer().receiveTask(task, this);
     }
 
     public void doOtherWork() {
         System.out.println("项目经理干其他事情...");
     }
-
-    /*@Override
-    public void noticeMe(String msg) {
-        System.out.println(msg);
-    }*/
 }
