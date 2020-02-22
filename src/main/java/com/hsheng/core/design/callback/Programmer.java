@@ -1,7 +1,5 @@
 package com.hsheng.core.design.callback;
 
-import java.util.concurrent.TimeUnit;
-
 /**
  * @description TODO
  * @author hesheng
@@ -10,21 +8,23 @@ import java.util.concurrent.TimeUnit;
  */
 public class Programmer {
 
-    Notice notice;
+    private Notice notice;
+
+    interface Notice {
+        void noticeMe(String msg);
+    }
+
+    public void setNotice(Notice notice) {
+        this.notice = notice;
+    }
 
     /**
      * 接受任务
      * @param task
-     * @param notice
      */
-    public void receiveTask(String task, Notice notice) {
-        this.notice = notice;
-        try {
-            //程序员开始执行任务
-            this.excuteTask(task);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public void receiveTask(String task) {
+        //程序员开始执行任务
+        this.excuteTask(task);
     }
 
     /**
@@ -32,10 +32,10 @@ public class Programmer {
      * @param task
      * @throws InterruptedException
      */
-    private void excuteTask(String task) throws InterruptedException {
+    private void excuteTask(String task) {
         System.out.println("执行项目经理：安排的任务-->" + task);
         //任务执行中
-        TimeUnit.SECONDS.sleep(1);
+        //TimeUnit.SECONDS.sleep(1);
         //任务完成
         this.finished(task);
     }
