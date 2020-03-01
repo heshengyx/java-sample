@@ -1,7 +1,7 @@
 package com.hsheng.core.design.factory;
 
 /**
- * @description TODO
+ * @description 工厂模式-客户端
  * @author hesheng
  * @date 2020/1/8 8:46
  * @since TODO
