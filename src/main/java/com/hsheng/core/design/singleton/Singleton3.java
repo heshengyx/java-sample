@@ -1,7 +1,7 @@
 package com.hsheng.core.design.singleton;
 
 /**
- * @description volatile+双重锁判断机制
+ * @description 单例模式-volatile+双重锁判断机制
  * @author hesheng
  * @date 2019/12/23 13:59
  * @since TODO

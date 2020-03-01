@@ -1,7 +1,7 @@
 package com.hsheng.core.design.singleton;
 
 /**
- * @description 懒汉式(线程安全，调用效率不高，但是能延时加载
+ * @description 单例模式-懒汉式(线程安全，调用效率不高，但是能延时加载
  * @author hesheng
  * @date 2019/12/23 13:56
  * @since TODO

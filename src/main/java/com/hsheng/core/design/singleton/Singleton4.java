@@ -5,7 +5,7 @@
 package com.hsheng.core.design.singleton;
 
 /**
- * @description 静态内部类实现模式（线程安全，调用效率高，可以延时加载）
+ * @description 单例模式-静态内部类实现模式（线程安全，调用效率高，可以延时加载）
  * @author hesheng
  * @date 2019/12/23 16:17
  * @since TODO
