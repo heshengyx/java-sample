@@ -1,7 +1,7 @@
 package com.hsheng.core.design.adapter.a01;
 
 /**
- * @description TODO
+ * @description 适配器模式-客户端
  * @author hesheng
  * @date 2020/1/7 17:03
  * @since TODO

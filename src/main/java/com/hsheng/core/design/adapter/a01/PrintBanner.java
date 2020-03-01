@@ -1,7 +1,7 @@
 package com.hsheng.core.design.adapter.a01;
 
 /**
- * @description 继承的适配器
+ * @description 适配器模式-继承的适配器
  * @author hesheng
  * @date 2020/1/7 17:01
  * @since TODO

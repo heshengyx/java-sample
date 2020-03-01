@@ -1,7 +1,7 @@
 package com.hsheng.core.design.adapter.a02;
 
 /**
- * @description 委托的适配器
+ * @description 适配器模式-委托的适配器
  * @author hesheng
  * @date 2020/1/7 17:10
  * @since TODO
