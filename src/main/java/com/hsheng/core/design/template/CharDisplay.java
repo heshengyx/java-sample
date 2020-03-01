@@ -1,7 +1,7 @@
 package com.hsheng.core.design.template;
 
 /**
- * @description TODO
+ * @description 模板模式-显示字符
  * @author hesheng
  * @date 2020/1/7 18:25
  * @since TODO
