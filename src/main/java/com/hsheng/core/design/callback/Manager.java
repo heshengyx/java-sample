@@ -1,7 +1,7 @@
 package com.hsheng.core.design.callback;
 
 /**
- * @description 实现回调接口
+ * @description 回调函数
  * @author hesheng
  * @date 2020/2/20 8:35
  * @since TODO
