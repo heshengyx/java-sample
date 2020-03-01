@@ -6,7 +6,7 @@ import java.lang.reflect.Proxy;
 
 /**
  * 只能代理实现了接口的类，而不能实现接口的类就不能实现JDK的动态代理
- * @description jdk动态代理
+ * @description 代理模式-jdk动态代理
  * @author hesheng
  * @date 2020/1/4 9:17
  * @since TODO

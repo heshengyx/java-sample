@@ -1,7 +1,7 @@
 package com.hsheng.core.design.proxy.jdk;
 
 /**
- * @description jdk动态代理测试类
+ * @description 代理模式-客户端
  * @author hesheng
  * @date 2020/1/4 9:22
  * @since TODO

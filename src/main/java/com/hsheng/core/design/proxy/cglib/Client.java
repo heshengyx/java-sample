@@ -3,7 +3,7 @@ package com.hsheng.core.design.proxy.cglib;
 import net.sf.cglib.core.DebuggingClassWriter;
 
 /**
- * @description cglib动态代理测试类
+ * @description 代理模式-客户端
  * @author hesheng
  * @date 2020/1/4 10:35
  * @since TODO

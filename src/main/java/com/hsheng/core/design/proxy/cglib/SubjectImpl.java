@@ -1,7 +1,7 @@
 package com.hsheng.core.design.proxy.cglib;
 
 /**
- * @description 真实主题类
+ * @description 代理模式-真实主题类
  * @author hesheng
  * @date 2020/1/4 9:15
  * @since TODO
