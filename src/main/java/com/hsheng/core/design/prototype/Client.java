@@ -1,7 +1,7 @@
 package com.hsheng.core.design.prototype;
 
 /**
- * @description TODO
+ * @description 原型模式-客户端
  * @author hesheng
  * @date 2020/3/1 19:03
  * @since TODO

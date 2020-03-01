@@ -1,7 +1,7 @@
 package com.hsheng.core.design.prototype;
 
 /**
- * @description 原型设计
+ * @description 原型模式-对象克隆
  * @author hesheng
  * @date 2020/3/1 19:01
  * @since TODO
