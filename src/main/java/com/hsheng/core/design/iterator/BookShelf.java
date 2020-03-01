@@ -1,7 +1,7 @@
 package com.hsheng.core.design.iterator;
 
 /**
- * @description 表示书架的类
+ * @description 迭代器模式-表示书架的类
  * @author hesheng
  * @date 2020/1/7 16:00
  * @since TODO

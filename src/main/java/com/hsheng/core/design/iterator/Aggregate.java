@@ -1,7 +1,7 @@
 package com.hsheng.core.design.iterator;
 
 /**
- * @description 表示集合的接口
+ * @description 迭代器模式-表示集合的接口
  * @author hesheng
  * @date 2020/1/7 14:39
  * @since TODO

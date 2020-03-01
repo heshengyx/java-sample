@@ -1,7 +1,7 @@
 package com.hsheng.core.design.iterator;
 
 /**
- * @description TODO
+ * @description 迭代器模式-客户端
  * @author hesheng
  * @date 2020/1/7 16:16
  * @since TODO
