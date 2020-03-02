@@ -1,4 +1,4 @@
-package com.hsheng.core.thread;
+package com.hsheng.core.thread.threadlocal;
 
 /**
  * @description 线程本地变量
