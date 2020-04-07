@@ -1,0 +1,61 @@
+# 下面这个是表示，我们运行 CI 用的镜像是 kkarczmarczyk/node-yarn:latest
+# 因为我司的 CI 任务是选的在 Docker 上运行，所以每次执行 CI 任务的时候，都会新启动一个 Docker 容器
+# 然后在容器中依次执行下面的命令
+# 注意：不同的 stage 执行前，都会将该容器环境设置为初始化时的状态
+image: kkarczmarczyk/node-yarn:latest
+
+# 定义全局的缓存策略，如上所说，每个不同的 stage，CI 都会重新启动一个新的容器，所以我们之前 stage 中的文件都会消失
+# 那在前端开发中，就意味着每个 stage 都要重新完整装一次 node_modules，这样的时间和网络成本都不低
+# 所以我们选择将这些文件缓存下来
+# 但是，缓存也要讲究实效性，例如我在第二次的提交中增加了一个库，那第二次的 CI 就不能再重复使用上一次的 node_modules 缓存了
+# 在 .gitlab-ci.yml 中，我们通过设置 cache 的 key 来区分不同的缓存
+cache:
+  # 该 Key 的值为一个系统变量，gitlab 在运行的时候内置了不少的系统变量供使用，下面的配置表示
+  # 以每次提交的 ref 号为 key 来区分不同缓存，效果就是同一次提交中的所有 stage 用同一份 cache
+  key: ${CI_COMMIT_REF_SLUG}
+
+# 定义 stage，stage 可以简单的理解为“步骤”，会顺序执行，如果上一步错了，那不会继续执行下一步
+# 比如像下面我定义的，第一步先初始化，第二步检查代码规范，第三步进行单元测试，第四步构建，第五步就直接将项目部署到服务器
+stages:
+  - build
+  - test
+  - deploy
+
+before_script:
+  - echo "before script section"
+   
+after_script:
+  - echo "After script section"
+   
+mvn-build:
+  stage: build
+  script:
+    - echo "Do our build here"
+    - "mvn clean compile"
+   
+mvn-test:
+  stage: test
+  script: 
+    - echo "Do a test here"
+    - "mvn test"
+   
+docker-deploy:
+  stage: deploy
+  script:
+    - echo "Do our deploy here"
+    - "ls -la"
+    - "mvn package"
+    - "mvn install"
+    # 登录镜像仓库
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    # 创建镜像
+    - docker build -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" .
+    # 如果存在name=web的容器, 则删除
+    - if [ $(docker ps -aq --filter name=web) ]; then docker rm -f web; fi
+    # 运行容器
+    - docker run -d -p 5000:5000 --name web "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
+  tags:
+    - runner-1 #指定runner来执行此stage
+  only:
+    - master #只有在master分支才执行此stage
+
