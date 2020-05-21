@@ -21,5 +21,5 @@ public @interface EnableServer {
      * 服务器类型
      * @return
      */
-    Server.Type type();
+    Server.Type type() default Server.Type.HTTP;
 }
