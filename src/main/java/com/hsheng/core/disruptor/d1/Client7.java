@@ -21,6 +21,7 @@ import java.nio.ByteBuffer;
 public class Client7 {
 
     public static void main(String[] args) throws Exception {
+        //ExecutorService executor = Executors.newCachedThreadPool();
         // The factory for the event
         LongEventFactory factory = new LongEventFactory();
 
@@ -33,8 +34,14 @@ public class Client7 {
         Disruptor<LongEvent> disruptor = new Disruptor(
                 factory, bufferSize, DaemonThreadFactory.INSTANCE, ProducerType.SINGLE, new BlockingWaitStrategy());
 
+        /**
+         * 使用handleEventsWithWorkerPool就可以完成不重复消费，
+         * 使用handleEventsWith就是重复消费
+         */
         // Connect the handler
-        disruptor.handleEventsWith(new LongEventHandler());
+        // 可以同时发给多个消费者
+        disruptor.handleEventsWith(new LongEventHandler(), new LongEventHandler());
+        //disruptor.handleEventsWith(new LongEventHandler());
 
         // Start the Disruptor, starts all threads running
         disruptor.start();
@@ -49,10 +56,11 @@ public class Client7 {
         LongEventProducer producer = new LongEventProducer(ringBuffer);
 
         ByteBuffer buffer = ByteBuffer.allocate(8);
-        for (long i = 0; true; i++) {
+        for (long i = 0; i < 100; i++) {
             buffer.putLong(0, i);
             producer.onData(buffer);
-            Thread.sleep(1000);
+            //Thread.sleep(1000);
         }
+        disruptor.shutdown();
     }
 }

@@ -13,8 +13,9 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE})
 @Documented
-@Import(MyMapperBeanDefinitionRegistrar.class)
+//@Import(MyMapperBeanDefinitionRegistrar.class)
+@Import(MyImportBeanDefinitionRegistrar.class)
 public @interface MyMapperScan {
 
-    String value() default "";
+    String basePackage() default "";
 }

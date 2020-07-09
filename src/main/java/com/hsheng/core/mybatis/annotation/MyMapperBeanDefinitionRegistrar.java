@@ -25,9 +25,9 @@ public class MyMapperBeanDefinitionRegistrar implements ImportBeanDefinitionRegi
         /**
          * 获取指定注解信息
          */
-        AnnotationAttributes mapperScanAttrs = AnnotationAttributes.fromMap(annotationMetadata.getAnnotationAttributes(MyMapperScan.class.getName()));
-        if (mapperScanAttrs != null) {
-            this.registerBeanDefinitions(mapperScanAttrs, registry);
+        AnnotationAttributes attributes = AnnotationAttributes.fromMap(annotationMetadata.getAnnotationAttributes(MyMapperScan.class.getName()));
+        if (attributes != null) {
+            this.registerBeanDefinitions(attributes, registry);
         }
 
         /*Map<String, Object> annotationAttributes = annotationMetadata.getAnnotationAttributes(MyMapperScan.class.getName());
@@ -56,9 +56,9 @@ public class MyMapperBeanDefinitionRegistrar implements ImportBeanDefinitionRegi
 
     }
 
-    private void registerBeanDefinitions(AnnotationAttributes annoAttrs, BeanDefinitionRegistry registry) {
+    private void registerBeanDefinitions(AnnotationAttributes attributes, BeanDefinitionRegistry registry) {
         MyMapperScanner scanner = new MyMapperScanner(registry);
-        String basePackage = annoAttrs.getString("value");
+        String basePackage = attributes.getString("basePackage");
         List<Class<?>> classes = scanner.scan(basePackage);
         classes.stream().forEach(clazz -> {
             //1、获取beanDefinition

@@ -12,6 +12,6 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ComponentScan(basePackages = "com.hsheng.core.mybatis")
-@MyMapperScan("com.hsheng.core.mybatis.mapper")
+@MyMapperScan(basePackage = "com.hsheng.core.mybatis.mapper")
 public class AppConfig {
 }

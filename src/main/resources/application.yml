@@ -1,3 +1,5 @@
 context:
   initializer:
     classes: com.hsheng.core.springboot.initializer.ThirdInitializer
+  listener:
+    classes: com.hsheng.core.springboot.listener.ThirdListener
