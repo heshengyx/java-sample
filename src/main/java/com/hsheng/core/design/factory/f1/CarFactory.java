@@ -15,11 +15,16 @@ public final class CarFactory {
      */
     public static Car create(Class<? extends Car> car) {
         try {
-            return (Car) car.newInstance();
+            return car.newInstance();
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static void main(String[] args) {
+        create(FordCar.class);
+        create(BuckCar.class);
     }
 }
 
@@ -31,9 +36,19 @@ interface Car {}
 /**
  * 具体产品
  */
-class FordCar implements Car {}
+class FordCar implements Car {
+
+    public FordCar() {
+        System.out.println("create FordCar");
+    }
+}
 
 /**
  * 具体产品
  */
-class BuckCar implements Car {}
+class BuckCar implements Car {
+
+    public BuckCar() {
+        System.out.println("create BuckCar");
+    }
+}
