@@ -70,14 +70,14 @@ public class Client {
         countDownLatch.countDown(); //同时触发100个线程同时开始
 
         TimeUnit.SECONDS.sleep(5);
-        System.out.println("任务总是: " + consumers[0].getCount());
+        System.out.println("任务总数: " + consumers[0].getCount());
         pool.shutdown();
     }
 
     static class EventExceptionHandler implements ExceptionHandler<Order> {
 
         @Override
-        public void handleEventException(Throwable throwable, long l, Order order) {
+        public void handleEventException(Throwable throwable, long sequence, Order order) {
 
         }
 
